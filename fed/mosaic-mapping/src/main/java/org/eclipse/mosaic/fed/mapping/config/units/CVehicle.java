@@ -161,9 +161,10 @@ public class CVehicle implements Comparable<CVehicle> {
     public String typeDistribution;
 
     /**
-     * Determines if selection of a vehicles type when spawning follows a fixedOrder or stochastic model.
-     * When set to true the spawning-process will choose exactly the same types with every execution.
-     * When set to false the order of types may be different and selected weights will be reached more slowly.
+     * Determines if selection of a vehicles type when spawning follows a fixed order.
+     * When set to true the spawning-process will choose types in a periodic pattern, strictly following the weight constrains.
+     * When set to false each vehicle type is decided by rolling a weighted die.
+     * However, the simulations randomness is controlled by the simulations random seed. Hence, a fixed seed value yields the same selection order between executions.
      */
     public boolean fixedOrder = true;
 
